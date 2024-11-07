@@ -10,6 +10,8 @@ services:
     image: tempchloer/lbg-grad-compose-front-a
     build:
       context: ./frontend-1
+      args:
+        SERVER_URL: ${SERVER_URL}
     ports:
       - target: 80
         published: 80
@@ -17,6 +19,8 @@ services:
     image: tempchloer/lbg-grad-compose-front-b
     build:
       context: ./frontend-2
+      args:
+        SERVER_URL: ${SERVER_URL}
     ports:
       - target: 80
         published: 81
